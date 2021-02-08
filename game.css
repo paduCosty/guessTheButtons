@@ -1,0 +1,21 @@
+body {
+    background-color: rgb(68, 163, 84);
+}
+div {
+    border: solid gray 4px;
+    height: 900px;
+    width: 1100px; 
+}
+body {
+    background-color: black;
+}
+table {
+    padding-top: 50px;
+    text-align: center;
+}
+table td {
+    color: red;
+    border: solid gray 2px;
+    text-align: center;
+
+}
