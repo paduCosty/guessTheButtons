@@ -3,22 +3,15 @@
 <head>
 	<title> N butoane</title>
     <link href = "game.css" rel = "stylesheet">
-
 <body>
 <center>
-	    
-	    	<table>
-                <h2 style = "color: rgb(85, 124, 21)">Selecteaza butonul castigator!</h2>
-                <p style = "color: rgb(85, 124, 21)">Introdu un numar</p>
-                <td>Introdu numarul: <input id = "txtInput" type = "number" name="name" size = "20">
-	    			<button id = "searchButton" onclick="buttonFunction()">Try</button></td>
-	    	</table>
+    <h2 style = "color: rgb(85, 124, 21)">Select the winning button!</h2>
+    <p style = "color: rgb(85, 124, 21)">Enter a number!</p>
+        <input id = "txtInput" type = "number" name="name" size = "20">
+	    <button id = "searchButton" onclick="buttonFunction()">Try</button></td>
 	    	<p id = "text1" style="color: rgb(85, 124, 21)" onclick="alegeNr()"></p>
-            <p id = "cartof" style = "color: rgb(85, 124, 21)">Numarul castigator a fost:  </p>
-	    
+            <p id = "correctNumber" style = "color: rgb(85, 124, 21)">The winning number was: </p>
 </center>
     <script src = "game.js"></script>
-
 </body>
-
 </html>
