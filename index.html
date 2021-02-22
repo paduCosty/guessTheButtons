@@ -1,17 +1,27 @@
 <!DOCTYPE html>
 <html>
-<head>
-	<title> N butoane</title>
-    <link href = "game.css" rel = "stylesheet">
-<body>
-<center>
-    <h2 style = "color: rgb(85, 124, 21)">Select the winning button!</h2>
-    <p style = "color: rgb(85, 124, 21)">Enter a number!</p>
-        <input id = "txtInput" type = "number" name="name" size = "20">
-	    <button id = "searchButton" onclick="buttonFunction()">Try</button></td>
-	    	<p id = "text1" style="color: rgb(85, 124, 21)" onclick="alegeNr()"></p>
-            <p id = "correctNumber" style = "color: rgb(85, 124, 21)">The winning number was: </p>
-</center>
-    <script src = "game.js"></script>
-</body>
+    <head>
+    	<title> N butoane</title>
+        <link href = "button.css" rel = "stylesheet">
+    </head>
+    <body>
+        <center>
+            <div id = "border">
+                <h2 >Alege butonul castigator</h2>
+                <button id = "satartGame" onclick = "fnctionStartGame()">Start game!</button>
+                <p id = "txtRule" style = "color: wheat;"></p>
+                <div id = "buttonPading">
+                    <button id = "button1">__??__</button>
+                    <button id = "button2">__??__</button>
+                    <button id = "button3">__??__</button>  
+                    <p style="color: red;" id = "gameOut"></p> 
+                </div>           
+            </div>
+            <h2 style = "color: rgb(85, 124, 21)">Select the winning button!</h2>
+            <p style = "color: rgb(85, 124, 21)">Enter a number!</p>
+            <input id = "txtInput" type = "number" name="name" size = "20">
+    	    <button id = "searchButton" onclick="buttonFunction()">Try</button>
+        </center>
+    <script src = "game.js"></script> 
+    </body>
 </html>
