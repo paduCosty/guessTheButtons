@@ -1,82 +1,42 @@
-// Game 3 buttons
-let index = false;
-function fnctionStartGame() {
-    document.getElementById("txtRule").innerHTML = "Press one of the three winning buttons!";
-    let button1 = 0, button2 = 1, button3 = 2;            
-    let randomNumber = Math.floor(Math.random() * 3);
-    document.getElementById('button1').onclick = function button1Eveniment() {
-        if(index == false) {
-            if(button1 == randomNumber) {
-                document.getElementById("button1").style = "Color: blue";
-                document.getElementById("gameOut").textContent = "You won!";
-                document.getElementById("gameOut").style = "Color: blue";
-                
-            } else {
-                document.getElementById("button1").style = "Color: red";
-                document.getElementById("gameOut").textContent = "You lost!";
-            }
-            index = true;
-        }
-    }
-    document.getElementById('button2').onclick = function button2Eveniment() {
-       if(index == false) {
-           if(button2 == randomNumber) {
-               document.getElementById("button2").style = "Color: blue";
-               document.getElementById("gameOut").textContent = "You won!";
-               document.getElementById("gameOut").style = "Color: blue";
-            } else {
-                document.getElementById("button2").style = "Color: red";
-                document.getElementById("gameOut").textContent = "You lost!";
-            }
-            index = true;
-        }
-    }
-    document.getElementById('button3').onclick = function button3Eveniment() {
-        if(index == false) {
-            if(button3 == randomNumber) {
-                document.getElementById("button3").style = "Color: blue";
-                document.getElementById("gameOut").textContent = "You won!";
-                document.getElementById("gameOut").style = "Color: blue";
-             } else {
-                 document.getElementById("button3").style = "Color: red";
-                 document.getElementById("gameOut").textContent = "You lost!";
-             }
-             index = true;
-         }
-     }
+let randomButton = Math.floor(Math.random() * 3), index = true; /// Game with 3 buttons
+function startGame() {
+    document.getElementById("startGame").style = "Color: green";
+    let gameButtons = document.getElementById("gameButtons");
+    for(let i = 0; i < 3; ++i)
+        gameButtons.innerHTML += '<button class = "cell"  id = "'+ i +'" onclick = "place(' + i + ')">' + "__??__" + '</button>';
 }
-// game N buttons
-index = false, stopp = false;
-function buttonFunction() {
-    if(stopp == false) {
-        let nrButton = document.getElementById("txtInput").value;
-        let randomNumber = Math.floor(Math.random() * nrButton);
-        let e = [];
-        for(let i = 0; i < nrButton; ++i) {
-            let buttonName = document.createTextNode('__??__');
-            e[i] = document.createElement("button");
-            document.body.appendChild(e[i]);
-            e[i].appendChild(buttonName);
-        }
-        let t = document.createTextNode('true');
-        e[randomNumber].onclick = function() {  
-            if(index == false) {  
-                e[randomNumber].innerHTML = "You are a winner!";
-                e[randomNumber].style = "Color: blue";
-                index = true;
-            }
-        }
-        for(let i = 0; i < nrButton; ++i) {
-            if(i != randomNumber) {
-                e[i].onclick = function() {
-                    if(index == false) {
-                        e[i].style = "Color: red";
-                        e[i].innerHTML = "You lose!";
-                        index = true;
-                    }
-                }
-            }
-        }
-        stopp = true;
+function place(i) {
+    if( i == randomButton && index == true) {
+    document.getElementById(i).style = "Color: blue";
+    document.getElementById("messageButton").innerHTML = "You selected the winning button!";
+    } else if(index == true) {
+        document.getElementById(i).style = "Color: red";
+        document.getElementById("messageButton").innerHTML = "The selected button is not a winner!";
+    }
+    index = false;
+}
+let nRandom, stopp = true;//N buttona gamee
+function startNGame() {
+    document.getElementById("startNGame").style = "Color:green";
+    let menuStart = document.getElementById("menuN");
+    menuStart.innerHTML = '<input type = "number" id = "nNumber">' + '<button id = "try">Try</button';
+    document.getElementById('try').onclick = function tryNumber() {
+        let nNumber = document.getElementById('nNumber').value;
+        nRandom = Math.floor(Math.random()* nNumber);
+        let nButton = document.getElementById('nButton');
+        for(let j = 0; j < nNumber; ++j)
+            nButton.innerHTML += '<button class = "cell" id = "'+ j +'" onclick = "findNumber('+ j +')"> __??__</button>'
     }
 }
+function findNumber(j) {
+    if(j == nRandom && stopp == true) {
+        document.getElementById(j).style = "Color: blue";
+        document.getElementById("gameMessage").style = "color: blue";
+        document.getElementById("gameMessage").innerHTML = "The selected button is the winner!";
+    } else if(stopp == true) {
+        document.getElementById(j).style = "color: red"
+        document.getElementById("gameMessage").style = "color: red";
+        document.getElementById("gameMessage").innerHTML = "The selected button is not the winner!";
+    }
+    stopp = false;
+}// am refacut jocul si am reusit sa scot jumatate din cod
