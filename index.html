@@ -1,27 +1,26 @@
 <!DOCTYPE html>
 <html>
     <head>
-    	<title> N butoane</title>
-        <link href = "button.css" rel = "stylesheet">
+        <link rel="stylesheet" href="button.css">
+        <script src="game.js"></script>
     </head>
     <body>
         <center>
-            <div id = "border">
-                <h2 >Alege butonul castigator</h2>
-                <button id = "satartGame" onclick = "fnctionStartGame()">Start game!</button>
-                <p id = "txtRule" style = "color: wheat;"></p>
-                <div id = "buttonPading">
-                    <button id = "button1">__??__</button>
-                    <button id = "button2">__??__</button>
-                    <button id = "button3">__??__</button>  
-                    <p style="color: red;" id = "gameOut"></p> 
-                </div>           
+            <div id = 'gameBorder'>
+                <h2>Select the Button</h2>
+                <button onclick="startGame()" id = "startGame">Start Game</button>
+                <p id = "gameButtons"> </p>
+                <p id = "messageButton"></p>
             </div>
-            <h2 style = "color: rgb(85, 124, 21)">Select the winning button!</h2>
-            <p style = "color: rgb(85, 124, 21)">Enter a number!</p>
-            <input id = "txtInput" type = "number" name="name" size = "20">
-    	    <button id = "searchButton" onclick="buttonFunction()">Try</button>
         </center>
-    <script src = "game.js"></script> 
+        <center id = "spaceCenter">
+            <div id = "nGame">
+                <h2>Game with N buttons</h2>
+                <button id = "startNGame" onclick="startNGame()">Start N Game</button>
+                <p id = "menuN"></p>
+                <p id = "gameMessage"></p>
+                <p id = "nButton"></p>
+            </div>
+        </center>
     </body>
 </html>
