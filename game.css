@@ -1,20 +1,18 @@
-#border{
-    border: solid gray 4px;
+#gameBorder {
+    border: solid coral 4px;
     height:300px;
-    width: 300px; 
-}
-#buttonPading {
-    padding-top: 20px;
+    width: 350px; 
+    text-align: center;
+    background-color: gray;
 }
 body {
     background-color: black;
 }
-table {
-    padding-top: 50px;
-    text-align: center;
+#nGame {
+    border: solid coral 4px;
+    width: 800px;
+    background-color: gray;
 }
-table td {
-    color: red;
-    border: solid gray 2px;
-    text-align: center;
+#spaceCenter {
+    padding-top: 30px;
 }
